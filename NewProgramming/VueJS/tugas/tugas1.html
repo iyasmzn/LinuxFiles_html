@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div id="app">
+		{{ nama }}
+		<ul>
+			<li v-for="n in 10">Ayam {{ n }}</li>
+		</ul>
+	</div>
+
+	<!-- Script -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el: '#app',
+			data: {
+				nama: 'Islamo',
+			},
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar 2 | Vue</title>
+	<style type="text/css">
+		.skyblue {
+			padding: 30px;
+			background-color: skyblue;
+		}
+		.tomato {
+			padding: 30px;
+			background-color: tomato;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app">
+		{{ nama }}
+
+		<br style="margin-bottom: 20px">
+
+		<input v-bind:value="nama">
+
+		<br style="margin-bottom: 20px">
+
+		<div v-bind:class="nama_class">
+			
+		</div>
+
+		<br style="margin-bottom: 20px">
+
+		<!-- <ul>
+			<li v-for="n in 10">Ayam {{ n }}</li>
+		</ul> -->
+
+		<br style="margin-bottom: 20px">
+
+		<button v-on:click="ubah()">Ubah Nama(one click)</button>
+		<button v-on:dblclick="ubah()">Ubah Nama(double click)</button>
+		<!-- @ == v-on -->
+		<button @mouseover="ubah()">Ubah Nama(mouse over)</button>
+
+		<br style="margin-bottom: 20px">
+
+		<button @click="ubahClass()">Ubah Class</button>
+
+		<br style="margin-bottom: 20px">
+
+		<!-- : == v-bind -->
+		<div :class="berubah ? 'tomato':'skyblue' ">
+			
+		</div>
+		<button @click="change()">Berubah</button>
+		<div>
+			<p v-if="berubah">skyblue</p>
+			<p v-else >tomato</p>
+		</div>
+
+	</div>
+
+	<!-- Script -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el: '#app',
+			data: {
+				nama: 'abid',
+				berubah: false,
+				nama_class: 'skyblue',
+			},
+			methods: {
+				ubah() {
+					this.nama = 'iyas';
+				},
+				ubahClass() {
+					this.nama_class = 'tomato';
+				},
+				change() {
+					this.berubah = !this.berubah;
+				},
+			},
+		})
+	</script>
+</body>
+</html>
